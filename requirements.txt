@@ -3,3 +3,4 @@
 # F:\PROJECTS\Flask Projects\TKM_Complex\tkmcomplex\__init__.py: 1
 # F:\PROJECTS\Flask Projects\TKM_Complex\tkmcomplex\routes.py: 1
 Flask == 1.1.2
+gunicorn==20.1.0
