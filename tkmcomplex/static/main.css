@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+* {
+box-sizing: border-box;
+}
+
+header,
+section {
+overflow-x: hidden;
+}
+
+:root {
+--font_Titles:'Berkshire Swash', cursive;
+--font_cursive: 'Dancing Script', cursive;
+--font_body:'Font Awesome 5 Free';
+--font_shoptitle: 'Exo 2', sans-serif;
+--font_time:'Font Awesome 5 Free';
+--font_quotes:'kalam', cursive;
+}
+
+.navbar{
+    font-size: 1.3rem;
+    opacity: 1;
+}
+
+
+header {
+    height: 100%;
+    color:red;
+    margin: 0;
+    padding: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+header .banner{
+background: url("  images/Background_1.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+-webkit-background-size: cover;
+background-position: center center;
+height: 100vh;
+position: relative;
+opacity: .8;
+}
+header .banner-text{
+    position: absolute;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgba(0,0,0,0);
+    color:red;
+    z-index: 1;
+}
+
+header .title #main{
+    padding-top: 7rem;
+    font-size: 4rem;
+    
+}
+
+.heading{
+    font-family:var(--font_Titles);
+    font-size: 2rem;
+}
+.cursi{
+    font-family:var(--font_cursive);
+    font-size: 2rem;
+}
+.logo{
+    font-family:var(--font_cursive);
+}
+
+body{
+    font-family: var(--font_body);
+    display: block;
+    background-color: #fdfdfd;
+    font-family: Lora,times new roman,Serif;
+    /* #dee2e6; */
+}
+#headerimg{
+    content: "";
+    background :url("images/Background_2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    top: 0; 
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;  
+    filter: blur(1.5px);
+    -webkit-filter: blur(1.5px);
+    -moz-filter: blur(1.5px); 
+}
+.card .card-title{
+    font-family: var(--font_shoptitle);
+    color: red;
+    font-weight: bold;
+}
+.card .card-body .time , .ph {
+    font-family: var(--font_time);
+}
+.quotes{
+    font-size: 1.25rem;
+}
+
+.section-1 .about{
+    background-color:#fdfdfd;
+}
+
+.section-2 {
+    font-family: var(--font_quotes) ;
+}
+
+.section-3{
+    border-radius: 25px;
+    background-color: whitesmoke;
+}
+.section-4{
+    background: url("  images/Background_4.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+.section-5{
+    background: url("  images/Background_N5.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+footer .section-1{
+    background:grey;
+}
+footer .section-1 #Contact{
+    line-height: 1rem;
+}
+@media (min-width: 768px) {
+    .carousel-multi-item-2 .col-md-3 {
+    float: left;
+    width: 25%;
+    max-width: 100%; 
+} 
+    .section-5 .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+        height: 400px;
+    }
+    
+}
+.section-2 .card-columns .card img{
+    background: #000000;
+    opacity: .7;
+    
+    
+}
+#module #collapseExample.collapse:not(.show) {
+    display: block;
+    height: 3rem;
+    overflow: hidden;
+}
+#module #collapseExample.collapsing {
+    height: 3rem;
+}
+
+#module a.collapsed:after {
+    content: 'Show More';
+}
+
+#module a:not(.collapsed):after {
+    content: 'Show Less';
+}
+
+/*
+Contact Section style
+=====================*/
+
+.main_contact{
+    overflow: hidden;
+    font-family: 'Roboto Condensed', sans-serif;
+    
+}
+
+#contact{
+    background-color: whitesmoke;
+    margin: 0px;
+    padding: 2px;
+}
+.main_contact label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: italic;
+    color: #797979;
+    font-size: 14px;
+    font-weight: bold;
+}
+.main_contact .btn{
+    display: inline-block;
+    margin-bottom: 0;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 2px solid;
+    padding: 0.8rem 2.5rem;
+    border-radius: 30px;
+    transition: all 0.6s;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    overflow: visible;
+    margin: 0;
+    font: inherit;
+}
+
+.main_contact .btn:hover {
+    border-color: #ee997b;
+    background-color: #ee997b;
+    color: #fff;
+    text-decoration: none;
+}
+
+.main_contact .contactlabel{
+    padding-top: 40px;
+}
+.widget_socail{}
+.widget_socail ul li a i{
+    background-color: #434343;
+    width:40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    color:#fff;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.widget_socail ul li a:hover i{
+    background-color: #ee997b;
+}
+

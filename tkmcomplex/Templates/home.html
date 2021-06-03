@@ -1,0 +1,283 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<header>
+        <div class="banner-text">
+        <nav class="navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand" href="#">
+                  <img src="{{ url_for('static',filename='images/TKM_logo_icon.png') }}" width="60" height="60" alt="TKM_Logo" loading="lazy">
+              </a>
+              <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#shops">Shops</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#rooms">Rooms</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#Contact">Contact</a>
+                  </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0" action="" id="fom">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search Shop" aria-label="Shop" id="myInput" autocomplete="off">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="searchFunc()">Search</button>
+              </form>
+              </div>
+          </nav>
+  
+
+          <div class="title col-6 text-center">
+              <h2 id="main">TKM Complex</h2>
+              <h4 id="sub">The Shopping Center</h4>
+          </div>
+        </div>
+        <div class="banner"></div>
+        
+</header>
+<div id='headerimg'></div>
+<body>
+
+    <div class="section-1" id="about">
+        <div class="row">
+        <div class="about content col-md-5 p-3 m-5">
+            <p class="cursi">a few words</p>
+            <p class="heading">About Us</p>
+            <p >TKM Complex is the most sought after destination in Mundur for shopping.Your favourite destination has completed 12 years.We thank every visitor who has made this happen.As we step into the 13th year we promise delighful new beginnings,newer, happier experience to everyone.</p>
+        </div>
+        </div>
+    </div>
+
+    <div class="section-2 m-1 d-sm-none d-md-block ">
+        <div class="card-columns p-4">
+            <div class="card">
+              <img src="{{ url_for('static',filename='images/Yourchoice_3.jpg') }}" class="card-img-top" alt="...">
+              <div class="card-img-overlay">
+                <p class="quotes card-text text-center py-auto">"Giving to others will not take away from what you have but will in fact add to your life."</p>
+                <footer class="blockquote-footer text-white">
+                  YourChoice
+                </footer>
+              </div>
+            </div>
+            
+            <div class="card">
+              <img src="{{ url_for('static',filename='images/Thejus_3.jpg') }}" class="card-img-top" alt="...">
+              <div class="card-img-overlay">
+                <p class="quotes card-text text-center py-auto">"If we are What we Eat...Well I am Awfully Sweet."</p>
+                <footer class="blockquote-footer text-white">
+                  ThejusBakery
+                </footer>
+              </div>
+            </div>
+            <div class="card bg-primary text-white text-center p-3">
+              <blockquote class="blockquote mb-0">
+                <p class="quotes">"Happiness is not in Money, But in shopping."</p>
+                <footer class="blockquote-footer text-white">
+                  TKM Complex
+                </footer>
+              </blockquote>
+            </div>
+            <div class="card text-center">
+              <img src="{{ url_for('static',filename='images/Dental_2.jpg') }}" class="card-img-top" alt="...">
+              <div class="card-img-overlay">
+                <p class="quotes card-text text-center py-auto">“Life begins with the confident smile”.</p>
+                <footer class="blockquote-footer text-white">
+                  DenzRoot Clinic
+                </footer>
+              </div>
+            </div>
+            <div class="card">
+              <img src="{{ url_for('static',filename='images/Studio_3.jpg') }}" class="card-img-top" alt="...">
+              <div class="card-img-overlay">
+                <p class="quotes card-text text-center py-auto">"You don't take a photography, you make it."</p>
+                <footer class="blockquote-footer text-white text-right">
+                  Sree Studio
+                </footer>
+              </div>
+            </div>
+            
+            
+          </div>
+    </div>
+
+
+
+
+    <div class="section-3 container-fluid p-4 border rounded" id="shops">
+        <h3 class="heading text-center py-3 text-dark">SHOPS</h3>
+        {% set j=0 %}
+        {% for i in range(3) %}
+        <div class="row row-cols-1 row-cols-md-2">
+          {% for k in range(4) %}  
+          {% set j = (j+k) + (i*4) %}
+          <div class="col mb-4">
+                <div class="card" id="{{shop[j].id}}">
+                  <div class="card-img-top p-1">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img class="d-block w-100" src="{{ url_for('static',filename='images/'+shop[j].img) }}" alt="First slide">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">{{shop[j].title}}</h5>
+                    <p class="card-text">
+                      <div id="module">
+                        <p class="collapse" id="collapseExample" aria-expanded="false">
+                      {{shop[j].content}}</p> <a role="button" class="collapsed" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      </a></p>
+                      
+                      </div>
+                    
+                    
+                      <h6 class="time">{{shop[j].wtime}}</h6>
+                    <h6 class="ph">Ph : {{shop[j].ph}}</h6>
+                    {% if shop[j].link %}
+                    <h6>Check it out : <a href="{{shop[j].link}}">Website</a></h6>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% set j = j+1 %}
+            {% endfor %}
+        </div>
+            
+        {% endfor %}
+        
+    </div>
+        
+        
+
+    <div class="section-5 container border  text-center  mt-5 text-white mb-5" id="rooms">
+      <div class="row"> 
+        <div class="col-12 col-md-8">
+          <h4 class="heading text-center pt-2">Rooms for Rents</h4>
+          <h3>Contact us for Enquiry</h3>
+          <p>Our array of accommodations is well suitable for students or working men.Easy access to bus stops and main road in Mundur-Cheruplassery, Mundur-Mannarkad. The property also has parking space for bikes and cars. </p>
+        </div>
+      </div>
+    </div>
+      
+      
+</body>
+    <!--Contact Us Section-->
+  <section id="contact" class="contact fix">
+      <div class="container">
+          <div style="margin-top: 20px;">
+              <div class="head_title text-left sm-text-center wow fadeInDown animated animated " style="visibility: visible; animation-name: fadeInDown;">
+                  <h2>Contact us</h2>
+                  <h5><em>Feel free to contact us!</em></h5>
+                  <div class="separator_left"></div>
+              </div>
+          </div>
+          <div class="row main_contact pb-3 ">
+                  <div class="contactlabel col-md-6 sm-m-top-60">
+                      <form action="https://formspree.io/f/xzbyrkyl" method="POST" id="contactform">
+                          <div class="row">
+                              <div class="col-sm-6">
+                                  <div class="form-group"> 
+                                      <label>Your Name *</label>
+                                      <input id="first_name" name="name" type="text" class="form-control" required="">
+                                  </div>
+                              </div>
+
+                              <div class="col-sm-6">
+                                  <div class="form-group">
+                                      <label>Your Email *</label>
+                                      <input id="email" type="email" name="_replyto" class="form-control">
+                                  </div>
+                              </div>
+
+                              <div class="col-sm-12">
+                                  <div class="form-group"> 
+                                      <label>Your Message *</label>
+                                      <textarea class="form-control" name="message" rows="6"></textarea>
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="submit" class="btn">SEND MESSAGE <i class="fa fa-long-arrow-right"></i></button>
+                                  </div>
+                              </div>
+
+                          </div>
+
+                      </form>
+                      <div id="status"></div>
+                  </div>
+
+                  <div class="col-md-6">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15674.668536734038!2d76.5794837!3d10.8367653!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7af1f84f9da98167!2sTKM%20Complex!5e0!3m2!1sen!2sin!4v1622698897549!5m2!1sen!2sin" width="100%" height="350px" style="border:0px;" allowfullscreen="" loading="lazy"></iframe>
+                  </div>
+                  
+
+              </div>
+          
+      </div><!--End off container -->
+  </section><!--End off Contact Section-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <footer>
+  <div class="section-1 container-fluid bg-dark text-white">
+    <div class="row">   
+      <div class="col-md-4 col-8 ">
+        <div class="container pt-3 text-right" id="Contact">
+        <h4>Connect with us:</h6>
+        <p><i class="fa fa-address-book pt-2" aria-hidden="true"></i> Address : TKM_Complex</p>
+        <p>Mundur,palakkad</p>
+        <p>Pincode :678592 </p>
+        <p><i class="fas fa-phone"></i> Phone : 9744727913, </p>
+        <p>8921954946.</p>
+        <p><i class="fas fa-envelope"></i> Email:TKMcomplexmundur@gmail.com</p>
+        </div>
+      </div>  
+      <div class="col-md-4 col-4 ">
+        <div class="mx-auto text-center pt-5">
+          <img src="{{ url_for('static',filename='images/TKM_logo_icon.png') }}" height="60" width="60" alt="" class="bg-light rounded">
+          <P class="logo">TKM</P>
+          <p>TKM COMPLEX<br>SINCE 2012</p>
+
+        </div>
+      </div>
+      <div class="col-md-4  d-none d-md-block text-center">
+        <div class="container mx-auto pt-3">
+        <h4 class="py-2">Links :</h6>
+        <a class="text-white" href="#about">About<br></a>
+        <a class="text-white" href="#shops">Shops<br></a>
+        <a class="text-white" href="#rooms">Rooms<br><br></a>
+
+
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="section-2 container-fluid bg-dark py-1">
+    <div class="container text-center text-white ">
+      <p>Copyright <i class="far fa-copyright"></i> 2020 TKM Complex | Powered by NS_Creation</p>
+      </div>
+
+  </div>
+    
+  </footer>  
+</body>
+
+{% endblock content %}
