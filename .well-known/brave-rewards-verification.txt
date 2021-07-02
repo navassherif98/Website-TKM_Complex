@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: tkmcomplex.herokuapp.com
+Token: 4c9d3e5939cc75435020193a528fbcd06c2c5879b60442af6571954c0296401a
